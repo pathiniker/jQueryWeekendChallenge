@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>jQuery Form Lecture</title>
+
+  <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body>
+  <form id="employee-info">
+    <label for="employee-first-name">First Name</label>
+    <input type="text" id="employee-first-name" name="employee-first-name" />
+
+    <label for="employee-last-name">Last Name</label>
+    <input type="text" id="employee-last-name" name="employee-last-name" />
+<br><br>
+    <label for="employee-id-number">ID Number</label>
+    <input type="text" id="employee-id-number" name="employee-id-number" />
+
+    <label for="employee-job-title">Job Title</label>
+    <input type="text" id="employee-job-title" name="employee-job-title" />
+<br><br>
+    <label for="employee-annual-salary">Annual Salary</label>
+    <input type="text" id="employee-annual-salary" name="employee-annual-salary" />
+&emsp;
+    <button type="submit">Submit</button>
+
+  </form>
+
+
+    <h2>Employee List</h2>
+    <table id="employee-data" border="1">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>ID Number</th>
+        <th>Job Title</th>
+        <th class="salary">Annual Salary</th>
+      </tr>
+<!-- Each submission should be one table row <tr>, with 5 <td> tags -->
+
+
+    </table>
+
+
+
+  <h3>Monthly Salary Expenditures:</h3>
+<div id="result">
+
+</div>
+
+</body>
+</html>

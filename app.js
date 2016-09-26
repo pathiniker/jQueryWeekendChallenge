@@ -16,9 +16,21 @@ $( document ).ready(function() {
 
 //clear form data upon submission
     $('#employee-info').find('input[type=text]').val('');
+    $('#employee-info').find('input[type=number]').val('');
+
 
 // appending to the DOM
   appendDom(employee);
+
+  calculateSum();
+
+
+  $('#employee-data').on('click', '.delete', function () {
+    $(this).closest('tr').remove();
+    calculateSum();
+
+
+  });
 
   });
 
@@ -35,6 +47,7 @@ $( document ).ready(function() {
   function appendDom(emp) {
     var $emp = $('<tr class="employee"></tr>');
 
+
 // first name + last name + id number + job title + annual salary
 
     $emp.append('<td>' + emp['employee-first-name'] + '</td>');
@@ -42,11 +55,41 @@ $( document ).ready(function() {
     $emp.append('<td>' + emp['employee-id-number'] + '</td>');
     $emp.append('<td>' + emp['employee-job-title'] + '</td>');
     $emp.append('<td class ="salary">' + emp['employee-annual-salary'] + '</td>');
+    $emp.append('<td><input type="image" src="redx.png" class="delete"></button></td>');
 
     $('#employee-data').append($emp);
 
   };
 
 
+  function calculateSum() {
+ var sum = 0;
+  $('.salary').each(function () {
+    var value = $(this).text();
+    if (!isNaN(value)) {
+      sum += parseInt(value);
+    }
+
+  });
+
+  $('#result').text('$' + parseInt(sum/12));
+
+}
+
+
 
 });
+
+//updateMonthlySalaryDisplay();
+//var totalMonthlySalary;
+// totalMonthlySalary = totalMonthlySalary + employee['employee-salary'] / 12;
+//updateMonthlySalary
+//function updateMonthlySalaryDisplay() {
+//
+// }
+
+
+//var $button = $('<button>Remove</button>');
+// function removeEmployee() {
+//   var $button =
+// }

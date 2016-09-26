@@ -12,25 +12,30 @@
 </head>
 
 <body>
+
+  <div id="input">
+  <h3>Submission Form:</h3>
+
   <form id="employee-info">
     <label for="employee-first-name">First Name</label>
-    <input type="text" id="employee-first-name" name="employee-first-name" />
-
+    <input type="text" id="employee-first-name" name="employee-first-name" required/>
+<br><br>
     <label for="employee-last-name">Last Name</label>
-    <input type="text" id="employee-last-name" name="employee-last-name" />
+    <input type="text" id="employee-last-name" name="employee-last-name" required/>
 <br><br>
     <label for="employee-id-number">ID Number</label>
-    <input type="text" id="employee-id-number" name="employee-id-number" />
-
+    <input type="number" id="employee-id-number" name="employee-id-number" required/>
+<br><br>
     <label for="employee-job-title">Job Title</label>
-    <input type="text" id="employee-job-title" name="employee-job-title" />
+    <input type="text" id="employee-job-title" name="employee-job-title" required/>
 <br><br>
     <label for="employee-annual-salary">Annual Salary</label>
-    <input type="text" id="employee-annual-salary" name="employee-annual-salary" />
+    <input type="number" id="employee-annual-salary" name="employee-annual-salary" required/>
 &emsp;
-    <button type="submit">Submit</button>
+    <button type="submit" id="submit">Submit</button>
 
   </form>
+</div>
 
 
     <h2>Employee List</h2>
@@ -44,15 +49,12 @@
       </tr>
 <!-- Each submission should be one table row <tr>, with 5 <td> tags -->
 
-
     </table>
 
-
-
   <h3>Monthly Salary Expenditures:</h3>
-<div id="result">
 
-</div>
+  <span id="result"></span>
+
 
 </body>
 </html>

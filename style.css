@@ -1,8 +1,59 @@
+body {
+  background-color: #ffffcc;
+  font-family: Arial;
+}
+
+#employee-data {
+  margin: auto;
+  background-color: #99ff99;
+
+}
+
+#input {
+  margin: auto;
+  width: 70%;
+  border-width: thin;
+
+}
+
+#employee-info {
+  color: #000000;
+}
+
+table {
+  border-collapse: collapse;
+}
+
 td {
   padding: 5px;
   text-align: center;
+  background-color: #FFFFFF;
 }
 
 th {
   padding: 0 15px;
+  background-color: #669999;
+}
+
+tr:first-of-type{
+
+}
+
+.delete {
+  width: 20px;
+  height: 20px;
+}
+
+h2 {
+  padding: 50px 0 0 0;
+  text-align: center;
+
+}
+
+#submit {
+width: 100px;
+border-width: thin;
+border-color: #669999;
+background-color: #FFFFFF;
+
 }

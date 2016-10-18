@@ -6,39 +6,117 @@
   <title>jQuery Form Lecture</title>
 
   <link rel="stylesheet" href="style.css">
-    <script src="jquery-3.1.1.min.js"></script>
-    <script src="app.js"></script>
+    <!-- <script src="jquery-3.1.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="client.js"></script>
 
 </head>
 
 <body>
 
-  <div id="input">
-  <h3>Submission Form:</h3>
+<div id="header">
+<h1>Dumb Company</h1>
 
-  <form id="employee-info">
-    <label for="employee-first-name">First Name</label>
-    <input type="text" id="employee-first-name" name="employee-first-name" required/>
-<br><br>
-    <label for="employee-last-name">Last Name</label>
-    <input type="text" id="employee-last-name" name="employee-last-name" required/>
-<br><br>
-    <label for="employee-id-number">ID Number</label>
-    <input type="number" id="employee-id-number" name="employee-id-number" required/>
-<br><br>
-    <label for="employee-job-title">Job Title</label>
-    <input type="text" id="employee-job-title" name="employee-job-title" required/>
-<br><br>
-    <label for="employee-annual-salary">Annual Salary</label>
-    <input type="number" id="employee-annual-salary" name="employee-annual-salary" required/>
-&emsp;
-    <button type="submit" id="submit">Submit</button>
+<ul>
+  <li><a href="">Home</a></li>
 
-  </form>
+  <li><a href="">Gallery</a></li>
+  <li><a href="">About Us</a></li>
+  <li><a href="">Contact</a></li>
+</ul>
+
+</div>
+<div id="left">
+
+</div>
+<main ng-app="basicApp">
+  <section ng-controller="BasicController as basic">
+
+<div id="top">
+
+<div id="newemployee">
+
+
+<h2>New Employee</h2>
+    <form id="employee-info">
+      <label for="employee-first-name">First Name</label>
+      <input type="text" id="first-name" ng-model="basic.employee.firstName" required/>
+  <br><br>
+      <label for="employee-last-name">Last Name</label>
+      <input type="text" id="last-name" ng-model="basic.employee.lastName" required/>
+  <br><br>
+      <label for="employee-id-number">ID Number</label>
+      <input type="number" id="id" ng-model="basic.employee.idNumber" required/>
+  <br><br>
+      <label for="employee-job-title">Job Title</label>
+      <input type="text" id="job-title" ng-model="basic.employee.jobTitle" required/>
+  <br><br>
+      <label for="employee-annual-salary">Annual Salary</label>
+      <input type="number" id="annual-salary" ng-model="basic.employee.annualSalary" required/>
+  &emsp;<br />
+
+
+      <button type="submit" id="submit" ng-click="basic.createEmployee()">Submit</button>
+    </form>
+</div>
+</div>
+<div id="info">
+
+
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>ID Number</th>
+        <th>Job Title</th>
+        <th class="salary">Annual Salary</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Jim</td>
+        <td>Bo</td>
+        <td>6</td>
+        <td>Supervisor</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr ng-repeat="employee in basic.employees">
+        <td> {{ employee.firstName }} </td>
+        <td> {{ employee.lastName }} </td>
+        <td> {{ employee.idNumber }} </td>
+        <td> {{ employee.jobTitle }} </td>
+        <td> {{ employee.annualSalary }} </td>
+        <td> <button ng-click="basic.deleteEmployee($index)"><img src="redx.png" height="15px" /></button> </td>
+      </tr>
+
+
+    </table>
+
+<div id="total">
+
+
+    <h3>Monthly Salary Expenditures:</h3>
+
+<p>
+  ${{ basic.totalMonthlySalary }}
+</p>
+</div>
+  </section>
+
+
+
+</main>
+
 </div>
 
+  <!-- <div id="input">
+  <h3>Submission Form:</h3>
 
-    <h2>Employee List</h2>
+
+</div> -->
+
+
+    <!-- <h2>Employee List</h2>
     <table id="employee-data" border="1">
       <tr>
         <th>First Name</th>
@@ -46,14 +124,14 @@
         <th>ID Number</th>
         <th>Job Title</th>
         <th class="salary">Annual Salary</th>
-      </tr>
+      </tr> -->
 <!-- Each submission should be one table row <tr>, with 5 <td> tags -->
 
-    </table>
+    <!-- </table>
 
   <h3>Monthly Salary Expenditures:</h3>
 
-  <span id="result"></span>
+  <span id="result"></span> -->
 
 
 </body>
